@@ -64,11 +64,10 @@ body {
 }
 
 .navbar-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   padding: 14px 32px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   background: var(--nav-bg);
   backdrop-filter: blur(18px);
@@ -114,12 +113,21 @@ body {
   color: var(--text-muted);
 }
 
-/* Center nav links */
+/* Right side stack: actions top, links bottom */
+
+.nav-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+/* Center nav links (second row on the right) */
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
   font-size: 13px;
 }
 
@@ -133,7 +141,7 @@ body {
   color: #ffffff;
 }
 
-/* Right side actions */
+/* Right side actions (top row on the right) */
 
 .nav-actions {
   display: flex;
@@ -175,14 +183,15 @@ body {
   box-shadow: 0 16px 40px rgba(123, 75, 255, 0.65);
 }
 
-/* MAIN HERO LAYOUT */
+/* MAIN HERO LAYOUT – CENTERED VERTICALLY */
 
 .hero-content {
   position: relative;
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 120px 32px 80px;
+  padding: 0 32px 80px;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.2fr);
   gap: 56px;
@@ -223,7 +232,7 @@ body {
   transform: translateY(-1px);
 }
 
-/* RIGHT NEWSLETTER CARD */
+/* RIGHT CARD – LATEST BLOGS */
 
 .hero-right {
   display: flex;
@@ -240,52 +249,50 @@ body {
 }
 
 .newsletter-title {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-size: 18px;
   font-weight: 500;
 }
 
-.newsletter-text {
-  margin: 0 0 18px;
-  font-size: 13px;
+/* Blogs list styling */
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.blog-item {
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.blog-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.blog-title {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.blog-meta {
+  margin: 0 0 6px;
+  font-size: 12px;
   color: var(--text-muted);
 }
 
-.newsletter-form {
-  display: flex;
-  gap: 0;
-}
-
-.newsletter-input {
-  flex: 1;
-  padding: 10px 12px;
-  border-radius: 4px 0 0 4px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-right: none;
-  background: rgba(0, 0, 0, 0.6);
+.blog-link {
+  padding: 0;
+  border: none;
+  background: none;
   color: #ffffff;
-  font-size: 13px;
-  outline: none;
-}
-
-.newsletter-input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.newsletter-submit {
-  padding: 0 20px;
-  border-radius: 0 4px 4px 0;
-  border: 1px solid transparent;
-  background: var(--purple);
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
   cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.newsletter-submit:hover {
-  background: #9267ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* SCROLL ARROW */
@@ -327,7 +334,7 @@ body {
 
   .hero-content {
     grid-template-columns: minmax(0, 1fr);
-    padding-top: 110px;
+    padding-inline: 20px;
     gap: 40px;
   }
 
@@ -341,10 +348,6 @@ body {
 }
 
 @media (max-width: 600px) {
-  .hero-content {
-    padding-inline: 20px;
-  }
-
   .hero-title {
     font-size: 32px;
   }
