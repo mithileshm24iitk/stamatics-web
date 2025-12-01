@@ -1,4 +1,3 @@
-// src/App.jsx
 import bgImage from "./assets/home_background.jpg";
 import logo from "./assets/logo.png";
 import "./App.css";
@@ -14,6 +13,7 @@ function App() {
       {/* NAVBAR */}
       <header className="navbar">
         <div className="navbar-inner">
+
           {/* LEFT: LOGO */}
           <div className="logo">
             <img src={logo} alt="Stamatics Logo" className="logo-image" />
@@ -23,25 +23,15 @@ function App() {
             </div>
           </div>
 
-          {/* RIGHT: SEARCH BAR (top) + LINKS (bottom) */}
-          <div className="nav-right">
-            <div className="nav-search">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="nav-search-input"
-              />
-              <button className="nav-search-button">Search</button>
-            </div>
+          {/* RIGHT: NAVIGATION LINKS (now on top-right, bold) */}
+          <nav className="nav-links top-right-nav">
+            <a href="#who">Who We Are</a>
+            <a href="#modules">Learning Modules</a>
+            <a href="#resources">Resources</a>
+            <a href="#team">Our Team</a>
+            <a href="#contact">Contact</a>
+          </nav>
 
-            <nav className="nav-links">
-              <a href="#who">Who We Are</a>
-              <a href="#modules">Learning Modules</a>
-              <a href="#resources">Resources</a>
-              <a href="#team">Our Team</a>
-              <a href="#contact">Contact</a>
-            </nav>
-          </div>
         </div>
       </header>
 
@@ -57,7 +47,7 @@ function App() {
           <button className="hero-button">Explore Competitions</button>
         </section>
 
-        {/* RIGHT: LATEST BLOGS (with images) */}
+        {/* RIGHT: LATEST BLOGS */}
         <section className="hero-right">
           <div className="newsletter-card">
             <h3 className="newsletter-title">Latest Blogs</h3>
