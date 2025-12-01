@@ -130,7 +130,7 @@ body {
   position: relative;
 }
 
-/* DROPDOWN MENU – NO FADE, INSTANT SHOW/HIDE */
+/* DROPDOWN MENU – INSTANT SHOW/HIDE */
 .dropdown-menu {
   position: absolute;
   top: 110%;  /* directly below “Competitions” */
@@ -164,7 +164,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* HERO CONTENT */
+/* HERO CONTENT (TOP SECTION) */
 .hero-content {
   position: relative;
   z-index: 1;
@@ -290,6 +290,59 @@ body {
   text-underline-offset: 3px;
 }
 
+/* ABOUT US SECTION */
+.about-section {
+  position: relative;
+  z-index: 1;
+  padding: 80px 32px 100px;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.about-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 800px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.about-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.about-card {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 12px;
+  padding: 18px 20px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.about-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.about-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 /* SCROLL ARROW */
 .scroll-indicator {
   position: absolute;
@@ -334,5 +387,9 @@ body {
 
   .newsletter-card {
     max-width: 100%;
+  }
+
+  .about-section {
+    padding-inline: 20px;
   }
 }
