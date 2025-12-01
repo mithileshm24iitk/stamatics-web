@@ -246,11 +246,9 @@ body {
 .newsletter-card {
   background: var(--card-bg);
   border-radius: 12px;
-  padding: 24px 26px;
-
-  max-width: 460px; /* widened from 360px */
+  padding: 28px 32px;
+  max-width: 620px; 
   width: 100%;
-
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
