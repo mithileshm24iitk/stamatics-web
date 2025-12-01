@@ -1,49 +1,61 @@
+import homeBg from "../../assets/home_background.jpg";
+
 function Home() {
   return (
-    <div className="px-6 py-10">
-      {/* HERO SECTION */}
-      <section className="text-center py-20">
-        <h1 className="text-4xl font-bold mb-4">
-          Welcome to Statamatics IIT Kanpur
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300">
-          Explore Mathematics, Statistics, and Beyond.
-        </p>
-        <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700">
-          Explore Competitions
-        </button>
-      </section>
+    <div
+      className="relative min-h-screen w-full flex items-center"
+      style={{
+        backgroundImage: `url(${homeBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* ABOUT BRIEF */}
-      <section className="py-10">
-        <h2 className="text-2xl font-semibold mb-2">About Us</h2>
-        <p className="text-gray-700 dark:text-gray-300 max-w-2xl">
-          Statamatics is a student body at IIT Kanpur dedicated to promoting
-          interest in Mathematics, Statistics, and problem-solving through 
-          competitions, workshops, and blogs.
-        </p>
-      </section>
+      {/* CONTENT */}
+      <div className="relative z-10 w-full px-10 md:px-20 flex flex-col md:flex-row justify-between items-start md:items-center">
+        
+        {/* LEFT SECTION — HERO TEXT */}
+        <div className="max-w-2xl mt-32 md:mt-0">
+          <h1 className="text-white text-5xl md:text-6xl font-bold leading-tight mb-6">
+            Statamatics IIT Kanpur
+          </h1>
 
-      {/* COMPETITION CARDS */}
-      <section className="py-10">
-        <h2 className="text-2xl font-semibold mb-4">Competitions</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {["Integration Bee", "Mathematica", "Mathemania"].map((title) => (
-            <div
-              key={title}
-              className="p-6 border rounded-lg shadow hover:shadow-lg transition"
-            >
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Exciting mathematics competition.
-              </p>
-              <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-                Learn More
-              </button>
-            </div>
-          ))}
+          <p className="text-gray-300 text-lg md:text-xl mb-10">
+            Inspiring mathematical thinking and problem-solving for the next generation.
+          </p>
+
+          <button className="px-8 py-3 border border-white text-white rounded-md hover:bg-white hover:text-black transition">
+            Enroll Now
+          </button>
         </div>
-      </section>
+
+        {/* RIGHT SECTION — MAILING LIST */}
+        <div className="mt-16 md:mt-0 bg-black/40 backdrop-blur-md p-6 rounded-lg max-w-md w-full">
+          <h3 className="text-white text-xl font-semibold mb-4">
+            Subscribe to our Mailing List
+          </h3>
+
+          <p className="text-gray-300 mb-4">Enter your email here</p>
+
+          <div className="flex">
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="flex-1 px-4 py-2 rounded-l-md bg-black/50 border border-gray-400 text-white focus:outline-none"
+            />
+            <button className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-r-md transition">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* SCROLL DOWN ARROW */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white text-3xl animate-bounce">
+        ↓
+      </div>
     </div>
   );
 }
