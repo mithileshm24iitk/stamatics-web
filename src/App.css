@@ -184,9 +184,9 @@ body {
   gap: 120px;
   align-items: center;
   transition:
-    filter 1s ease,
-    opacity 1s ease,
-    transform 1s ease;
+    filter 0.4s ease,
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 /* BLUR + HIDE HERO WHEN ABOUT IS ACTIVE */
@@ -319,8 +319,8 @@ body {
   opacity: 0;
   transform: translateY(40px);
   transition:
-    opacity 1s ease,
-    transform 1s ease;
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 .about-section.about-visible {
