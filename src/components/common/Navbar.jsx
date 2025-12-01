@@ -1,5 +1,5 @@
 import PillNav from "./PillNav";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 
 const navItems = [
   { label: "Home", href: "/" },
