@@ -1,4 +1,6 @@
+// src/App.jsx
 import bgImage from "./assets/home_background.jpg";
+import logo from "./assets/logo.png";
 import "./App.css";
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
         <div className="navbar-inner">
           {/* LEFT: LOGO */}
           <div className="logo">
-            <div className="logo-mark" />
+            <img src={logo} alt="Stamatics Logo" className="logo-image" />
             <div className="logo-text">
               <span className="logo-title">Stamatics</span>
               <span className="logo-subtitle">IIT Kanpur</span>
@@ -23,7 +25,6 @@ function App() {
 
           {/* RIGHT: SEARCH BAR (top) + LINKS (bottom) */}
           <div className="nav-right">
-            {/* Search bar instead of Log In / Enroll */}
             <div className="nav-search">
               <input
                 type="text"
@@ -48,9 +49,7 @@ function App() {
       <main className="hero-content">
         {/* LEFT: MAIN TEXT CENTERED VERTICALLY */}
         <section className="hero-left">
-          <h1 className="hero-title">
-            Stamatics IIT Kanpur
-          </h1>
+          <h1 className="hero-title">Stamatics IIT Kanpur</h1>
           <p className="hero-subtitle">
             The destination for students who seek to explore Mathematics,
             Statistics, and problem solving.
@@ -58,7 +57,7 @@ function App() {
           <button className="hero-button">Explore Competitions</button>
         </section>
 
-        {/* RIGHT: LATEST BLOGS (wider card) */}
+        {/* RIGHT: LATEST BLOGS (wide panel) */}
         <section className="hero-right">
           <div className="newsletter-card">
             <h3 className="newsletter-title">Latest Blogs</h3>
