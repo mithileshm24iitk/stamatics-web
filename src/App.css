@@ -184,16 +184,16 @@ body {
   gap: 120px;
   align-items: center;
   transition:
-    filter 0.8s ease,
-    opacity 0.8s ease,
-    transform 0.8s ease;
+    filter 1s ease,
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 /* BLUR + HIDE HERO WHEN ABOUT IS ACTIVE */
 .hero-content.hero-hidden {
-  filter: blur(16px);
+  filter: blur(18px);
   opacity: 0;
-  transform: translateY(-50px);
+  transform: translateY(-60px);
   pointer-events: none;
 }
 
@@ -319,8 +319,8 @@ body {
   opacity: 0;
   transform: translateY(40px);
   transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 .about-section.about-visible {
