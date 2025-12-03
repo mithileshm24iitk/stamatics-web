@@ -21,7 +21,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -44,7 +43,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-size: contain; /* IMPORTANT: keeps wallpaper from stretching */
+  background-size: contain;        /* avoids stretching */
   background-repeat: no-repeat;
   background-position: center top;
   color: var(--text-main);
@@ -126,6 +125,8 @@ body {
   color: var(--text-main);
   text-decoration: none;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .nav-link:hover,
@@ -162,15 +163,17 @@ body {
   display: flex;
 }
 
-.dropdown-menu a {
+.dropdown-menu a,
+.dropdown-item {
   padding: 10px 18px;
   text-decoration: none;
   color: var(--text-main);
   font-weight: 600;
-  transition: background 0.2s ease;
+  transition: background 0.15s ease;
 }
 
-.dropdown-menu a:hover {
+.dropdown-menu a:hover,
+.dropdown-item:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -185,13 +188,13 @@ body {
   margin: 0 auto;
   padding: 0 32px 80px;
   min-height: 100vh;
-
   display: grid;
   grid-template-columns: 1.4fr 1.6fr;
   gap: 120px;
   align-items: center;
 }
 
+/* LEFT HERO */
 .hero-left {
   max-width: 640px;
 }
@@ -218,7 +221,7 @@ body {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
 .hero-button:hover {
@@ -272,25 +275,32 @@ body {
   border-radius: 6px;
 }
 
+.blog-info {
+  flex: 1;
+}
+
 .blog-title {
   font-size: 15px;
   font-weight: 700;
+  margin-bottom: 4px;
 }
 
 .blog-meta {
   font-size: 13px;
   color: var(--text-muted);
   font-weight: 600;
+  margin-bottom: 6px;
 }
 
 .blog-link {
   background: none;
   border: none;
   color: #fff;
-  font-weight: 700;
   font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* ============================== */
@@ -432,6 +442,11 @@ body {
   outline: none;
 }
 
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: rgba(148, 163, 184, 0.9);
+}
+
 .contact-field input:focus,
 .contact-field textarea:focus {
   border-color: var(--purple);
@@ -452,6 +467,49 @@ body {
 .contact-submit:hover {
   background: #8a63ff;
   transform: translateY(-1px);
+}
+
+/* CONTACT INFO SIDE */
+
+.contact-info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-info-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.contact-info-text.small {
+  font-size: 13px;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-info-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e5e7eb;
 }
 
 /* ============================== */
@@ -476,8 +534,8 @@ body {
 }
 
 .mathemania-header {
-  margin-bottom: 40px;
   max-width: 720px;
+  margin-bottom: 40px;
 }
 
 .mathemania-title {
@@ -501,7 +559,7 @@ body {
 
 .mathemania-card {
   background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.6);
   border-radius: 12px;
   padding: 20px;
 }
@@ -541,9 +599,11 @@ body {
 .mathemania-info-value {
   font-size: 14px;
   color: #e5e7eb;
+  font-weight: 500;
 }
 
 .mathemania-button {
+  margin-top: 8px;
   padding: 8px 18px;
   border-radius: 999px;
   background: var(--purple);
@@ -551,7 +611,7 @@ body {
   border: none;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .mathemania-button:hover {
@@ -565,30 +625,58 @@ body {
 }
 
 .mathemania-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(148, 163, 184, 0.18);
 }
 
 /* ============================== */
-/*            RESPONSIVE          */
+/*        SCROLL INDICATOR        */
+/* ============================== */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.scroll-arrow {
+  font-size: 24px;
+  color: #ffffff;
+  /* ❌ no animation here anymore */
+}
+
+/* ============================== */
+/*          RESPONSIVE            */
 /* ============================== */
 
 @media (max-width: 900px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding-inline: 20px;
-  }
-
   .top-right-nav {
     display: none;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    padding-inline: 20px;
+    gap: 40px;
+  }
+
+  .hero-right {
+    justify-content: flex-start;
+  }
+
+  .newsletter-card {
+    max-width: 100%;
+  }
+
+  .about-section,
+  .contact-page,
+  .mathemania-page {
+    padding-inline: 20px;
   }
 
   .contact-grid,
   .mathemania-grid {
     grid-template-columns: 1fr;
-  }
-
-  .newsletter-card {
-    max-width: 100%;
   }
 }
