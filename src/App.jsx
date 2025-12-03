@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
+import Mathemania from "./pages/Mathemania";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
-        {/* later: /about, /competitions, /blogs, /team, etc. */}
+        <Route path="/mathemania" element={<Mathemania />} />
       </Routes>
     </div>
   );
