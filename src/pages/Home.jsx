@@ -1,5 +1,11 @@
 // src/pages/Home.jsx
+
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
+
+
 import bgImage from "../assets/home_background.jpg";
+import { blogs } from "../data/blogs";   // Import your blog data
 
 function Home() {
   return (
@@ -28,53 +34,27 @@ function Home() {
               <h3 className="newsletter-title">Latest Blogs</h3>
 
               <div className="blog-list">
-                <article className="blog-item">
-                  <div className="blog-thumbnail">
-                    <img
-                      src="https://via.placeholder.com/80x60"
-                      alt="Why Problem Solving Competitions Matter"
-                    />
-                  </div>
-                  <div className="blog-info">
-                    <h4 className="blog-title">
-                      Why Problem Solving Competitions Matter
-                    </h4>
-                    <p className="blog-meta">Community · 5 min read</p>
-                    <button className="blog-link">Read more →</button>
-                  </div>
-                </article>
-
-                <article className="blog-item">
-                  <div className="blog-thumbnail">
-                    <img
-                      src="https://via.placeholder.com/80x60"
-                      alt="A Beginner's Guide to Mathematical Thinking"
-                    />
-                  </div>
-                  <div className="blog-info">
-                    <h4 className="blog-title">
-                      A Beginner&apos;s Guide to Mathematical Thinking
-                    </h4>
-                    <p className="blog-meta">Learning · 7 min read</p>
-                    <button className="blog-link">Read more →</button>
-                  </div>
-                </article>
-
-                <article className="blog-item">
-                  <div className="blog-thumbnail">
-                    <img
-                      src="https://via.placeholder.com/80x60"
-                      alt="Inside Stamatics: Events, Talks, and More"
-                    />
-                  </div>
-                  <div className="blog-info">
-                    <h4 className="blog-title">
-                      Inside Stamatics: Events, Talks, and More
-                    </h4>
-                    <p className="blog-meta">Campus · 6 min read</p>
-                    <button className="blog-link">Read more →</button>
-                  </div>
-                </article>
+                {/* Dynamically loop through the blogs from your data file */}
+                {blogs.map((blog) => (
+                  <article className="blog-item" key={blog.id}>
+                    <div className="blog-thumbnail">
+                      <img
+                        src="https://via.placeholder.com/80x60"
+                        alt={blog.title}
+                      />
+                    </div>
+                    <div className="blog-info">
+                      <h4 className="blog-title">{blog.title}</h4>
+                      <p className="blog-meta">
+                        {blog.author} · {blog.date}
+                      </p>
+                      {/* This Link allows proper navigation to the article */}
+                      <Link to={`/blogs/${blog.id}`} className="blog-link">
+                        Read more →
+                      </Link>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </section>

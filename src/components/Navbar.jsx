@@ -21,7 +21,12 @@ function Navbar() {
 
         {/* RIGHT NAVIGATION */}
         <nav className="nav-links top-right-nav">
+
+
+          {/* ABOUT US */}
+
           {/* About Us scrolls within Home for now */}
+
           <a href="/#about" className="nav-link">
             About Us
           </a>
@@ -50,12 +55,21 @@ function Navbar() {
             </div>
           </div>
 
+
+          {/* BLOGS — FIXED: Now points to /blogs */}
+          <NavLink to="/blogs" className={navLinkClass}>
+            Blogs
+          </NavLink>
+
+          {/* TEAM — Still points to Home for now */}
+
           {/* BLOGS – can be routed later */}
           <NavLink to="/" className={navLinkClass}>
             Blogs
           </NavLink>
 
           {/* TEAM – can be routed later */}
+
           <NavLink to="/" className={navLinkClass}>
             Our Team
           </NavLink>
