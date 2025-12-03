@@ -18,7 +18,6 @@ function Mathemania() {
 
   const [submitting, setSubmitting] = useState(false);
 
-  // Same style as Contact: handleChange updates formData by name
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -42,20 +41,21 @@ function Mathemania() {
 
     setSubmitting(true);
 
+    // Your Mathemania Apps Script URL
     const GOOGLE_SCRIPT_URL =
       "https://script.google.com/macros/s/AKfycbyBmUZF4zRc1Ja8lqr0mF4kDmSO-ObQLRtmwCMObAdYHlKwzvcYYU4jz3x5IYT6T5-_PQ/exec";
 
     try {
-      await fetch(GOOGLE_SCRIPT_URL, {
+      const res = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        mode: "no-cors", // same as Contact.jsx
+        mode: "no-cors", // same pattern as your Contact.jsx
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(formData)
       });
 
-      // no-cors => we can't read response; assume success if no error thrown
+      // In no-cors, we can't read the response; assume success if no exception
       alert("Registration submitted! Your response has been recorded.");
 
       setFormData({
@@ -139,7 +139,7 @@ function Mathemania() {
             </p>
           </div>
 
-          {/* RIGHT: REGISTRATION FORM (looks unchanged, logic updated) */}
+          {/* RIGHT: REGISTRATION FORM (look unchanged, logic updated) */}
           <div className="mathemania-card">
             <h2 className="mathemania-card-title">
               Mathemania Registration Form
@@ -211,17 +211,12 @@ function Mathemania() {
                 </label>
                 <input
                   id="leaderEmail"
-                  name="leaderEmail"
+                  name="email"
                   type="email"
                   required
                   placeholder="leader@example.com"
                   value={formData.email}
-                  onChange={(e) =>
-                    setFormData((prev) => ({
-                      ...prev,
-                      email: e.target.value
-                    }))
-                  }
+                  onChange={handleChange}
                 />
               </div>
 
