@@ -15,7 +15,7 @@ function Mathemania() {
       institute: form.institute.value.trim(),
       teamLeader: form.teamLeader.value.trim(),
       email: form.leaderEmail.value.trim(),
-      contactNumber: form.leaderPhone.value.trim(),
+      contactNumber: form.contactNumber.value.trim(),
       member2Name: form.member2.value.trim(),
       member2Email: form.member2Email.value.trim(),
       member3Name: form.member3.value.trim(),
@@ -36,13 +36,19 @@ function Mathemania() {
     try {
       setSubmitting(true);
 
-      await fetch("YOUR_WEB_APP_URL_HERE", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbyBmUZF4zRc1Ja8lqr0mF4kDmSO-ObQLRtmwCMObAdYHlKwzvcYYU4jz3x5IYT6T5-_PQ/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      // Optional: if you configure Apps Script to return JSON, you can check `res.ok` or parse it
+      // const data = await res.json();
 
       alert(
         "Registration submitted! A confirmation email has been sent to the team leader."
@@ -53,9 +59,9 @@ function Mathemania() {
       alert(
         "An error occurred while submitting your registration. Please try again later."
       );
+    } finally {
+      setSubmitting(false);
     }
-
-    setSubmitting(false);
   };
 
   return (
@@ -191,11 +197,11 @@ function Mathemania() {
 
               {/* CONTACT NUMBER (required) */}
               <div className="mathemania-field">
-                <label htmlFor="leaderPhone">
+                <label htmlFor="contactNumber">
                   Contact Number<span className="required-star">*</span>
                 </label>
                 <input
-                  id="leaderPhone"
+                  id="contactNumber"
                   name="contactNumber"
                   type="tel"
                   required
