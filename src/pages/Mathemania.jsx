@@ -36,7 +36,7 @@ function Mathemania() {
     try {
       setSubmitting(true);
 
-      const res = await fetch(
+      await fetch(
         "https://script.google.com/macros/s/AKfycbyBmUZF4zRc1Ja8lqr0mF4kDmSO-ObQLRtmwCMObAdYHlKwzvcYYU4jz3x5IYT6T5-_PQ/exec",
         {
           method: "POST",
@@ -47,12 +47,7 @@ function Mathemania() {
         }
       );
 
-      // Optional: if you configure Apps Script to return JSON, you can check `res.ok` or parse it
-      // const data = await res.json();
-
-      alert(
-        "Registration submitted! A confirmation email has been sent to the team leader."
-      );
+      alert("Registration submitted! Your response has been recorded.");
       form.reset();
     } catch (err) {
       console.error(err);
@@ -215,7 +210,7 @@ function Mathemania() {
                   <label htmlFor="member2">Team Member 2</label>
                   <input
                     id="member2"
-                    name="member2Name"
+                    name="member2"
                     type="text"
                     placeholder="Name (optional)"
                   />
@@ -237,7 +232,7 @@ function Mathemania() {
                   <label htmlFor="member3">Team Member 3</label>
                   <input
                     id="member3"
-                    name="member3Name"
+                    name="member3"
                     type="text"
                     placeholder="Name (optional)"
                   />
@@ -259,7 +254,7 @@ function Mathemania() {
                   <label htmlFor="member4">Team Member 4</label>
                   <input
                     id="member4"
-                    name="member4Name"
+                    name="member4"
                     type="text"
                     placeholder="Name (optional)"
                   />
