@@ -116,12 +116,23 @@ function Mathemania() {
             <h2 className="mathemania-card-title mathemania-subheading">
               Key Information
             </h2>
-            <p classname="mathemania-keyinfo">
-              Format :
+
+            {/* FORMAT */}
+            <p className="mathemania-keyinfo">
+              Format:
             </p>
             <ul>
               <li>The paper contains 8-10 questions, each worth 10 points.</li>
               <li>Each question is subjective and explores areas such as proofs, logical reasoning, and geometry.</li>
+            </ul>
+
+            {/* RULES AND CONDUCT */}
+            <p className="mathemania-keyinfo rules">
+              Rules and Conduct:
+            </p>
+            <ul>
+              <li>Interaction between teams is strictly prohibited and may lead to penalties or disqualification.</li>
+              <li>All electronic devices must be submitted to an invigilator before the event begins. Any use of such devices during the competition results in immediate disqualification.</li>
             </ul>
 
             {/* ⭐ NEW LINE ADDED BELOW */}
