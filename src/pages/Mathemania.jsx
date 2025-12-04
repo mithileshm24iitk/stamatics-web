@@ -30,7 +30,6 @@ function Mathemania() {
     e.preventDefault();
     if (submitting) return;
 
-    // Team name validation (Roman characters, digits, spaces, underscores)
     const teamNamePattern = /^[A-Za-z0-9_ ]+$/;
     if (!teamNamePattern.test(formData.teamName.trim())) {
       alert(
@@ -106,7 +105,7 @@ function Mathemania() {
         </header>
 
         <div className="mathemania-grid">
-          {/* LEFT: EVENT OVERVIEW + KEY INFO + PAST PAPERS LINE */}
+          {/* LEFT PANEL */}
           <div className="mathemania-card">
             <h2 className="mathemania-card-title">Event Overview</h2>
             <p className="mathemania-text">
@@ -117,25 +116,29 @@ function Mathemania() {
               Key Information
             </h2>
 
-            {/* FORMAT */}
-            <p className="mathemania-keyinfo">
-              Format:
-            </p>
+            <p className="mathemania-keyinfo">Format:</p>
             <ul>
-              <li>The paper contains 8-10 questions, each worth 10 points.</li>
-              <li>Each question is subjective and explores areas such as proofs, logical reasoning, and geometry.</li>
+              <li>The paper contains 8–10 questions, each worth 10 points.</li>
+              <li>
+                Each question is subjective and explores areas such as proofs,
+                logical reasoning, and geometry.
+              </li>
             </ul>
 
-            {/* RULES AND CONDUCT */}
-            <p className="mathemania-keyinfo rules">
-              Rules and Conduct:
-            </p>
+            {/* FIXED HERE */}
+            <p className="mathemania-keyinfo">Rules and Conduct:</p>
             <ul>
-              <li>Interaction between teams is strictly prohibited and may lead to penalties or disqualification.</li>
-              <li>All electronic devices must be submitted to an invigilator before the event begins. Any use of such devices during the competition results in immediate disqualification.</li>
+              <li>
+                Interaction between teams is strictly prohibited and may lead to
+                penalties or disqualification.
+              </li>
+              <li>
+                All electronic devices must be submitted to an invigilator before
+                the event begins. Any use of such devices during the competition
+                results in immediate disqualification.
+              </li>
             </ul>
 
-            {/* ⭐ NEW LINE ADDED BELOW */}
             <p className="mathemania-text" style={{ marginTop: "10px" }}>
               <a
                 href="https://drive.google.com/drive/folders/1QXsp1OCryBgIKEJScEwKYkb8kdNkmaR6?usp=sharing"
@@ -151,7 +154,6 @@ function Mathemania() {
                 Click here for PYQs →
               </a>
             </p>
-            {/* ⭐ END OF NEW ADDITION */}
 
             <p className="mathemania-text mathemania-past-line">
               Past papers and resources will be made available on the Stamatics
@@ -159,7 +161,7 @@ function Mathemania() {
             </p>
           </div>
 
-          {/* RIGHT: REGISTRATION FORM (looks unchanged) */}
+          {/* RIGHT PANEL – FORM */}
           <div className="mathemania-card">
             <h2 className="mathemania-card-title">
               Mathemania Registration Form
@@ -174,7 +176,7 @@ function Mathemania() {
             </p>
 
             <form className="mathemania-form" onSubmit={handleSubmit}>
-              {/* TEAM NAME (required) */}
+              {/* TEAM NAME */}
               <div className="mathemania-field">
                 <label htmlFor="teamName">
                   Team Name<span className="required-star">*</span>
@@ -185,7 +187,6 @@ function Mathemania() {
                   type="text"
                   required
                   pattern="[A-Za-z0-9_ ]+"
-                  title="Use letters, numbers, spaces, and underscores only."
                   placeholder="Enter team name"
                   value={formData.teamName}
                   onChange={handleChange}
