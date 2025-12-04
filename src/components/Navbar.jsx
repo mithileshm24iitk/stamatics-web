@@ -14,7 +14,7 @@ function Navbar() {
         <Link to="/" className="logo">
           <img src={logo} alt="Stamatics Logo" className="logo-image" />
           <div className="logo-text">
-            <span className="logo-title">Stamatics</span>
+            <span className="logo-title">Stamatics</span><br />
             <span className="logo-subtitle">IIT Kanpur</span>
           </div>
         </Link>
