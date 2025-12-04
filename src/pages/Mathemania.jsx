@@ -110,32 +110,19 @@ function Mathemania() {
           <div className="mathemania-card">
             <h2 className="mathemania-card-title">Event Overview</h2>
             <p className="mathemania-text">
-              Mathemania II is an engaging team-based mathematics competition designed to challenge participants through a curated set of eight high-level problems drawn from diverse areas of mathematics. The event encourages collaborative problem-solving, strategic thinking, and rigorous reasoning under time constraints. Each team works together to complete the full question set, applying logic, geometry, algebra, number theory, and inequality techniques to arrive at correct solutions.
+              Mathemania is an engaging team-based mathematics competition designed to challenge participants through a curated set of eight high-level problems drawn from diverse areas of mathematics. The event encourages collaborative problem-solving, strategic thinking, and rigorous reasoning under time constraints. Each team works together to complete the full question set, applying logic, geometry, algebra, number theory, and inequality techniques to arrive at correct solutions.
             </p>
 
             <h2 className="mathemania-card-title mathemania-subheading">
               Key Information
             </h2>
-            <div className="mathemania-info-list">
-              <div className="mathemania-info-item">
-                <span className="mathemania-info-label">Format</span>
-                <span className="mathemania-info-value">
-                  Written + Interactive Rounds
-                </span>
-              </div>
-              <div className="mathemania-info-item">
-                <span className="mathemania-info-label">Level</span>
-                <span className="mathemania-info-value">
-                  Undergraduate &amp; Postgraduate
-                </span>
-              </div>
-              <div className="mathemania-info-item">
-                <span className="mathemania-info-label">Category</span>
-                <span className="mathemania-info-value">
-                  Problem Solving &amp; Math Contest
-                </span>
-              </div>
-            </div>
+            <p classname="mathemania-keyinfo">
+              Format :
+            </p>
+            <ul>
+              <li>The paper contains 8-10 questions, each worth 10 points.</li>
+              <li>Each question is subjective and explores areas such as proofs, logical reasoning, and geometry.</li>
+            </ul>
 
             {/* ⭐ NEW LINE ADDED BELOW */}
             <p className="mathemania-text" style={{ marginTop: "10px" }}>
