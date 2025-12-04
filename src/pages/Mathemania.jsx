@@ -53,7 +53,6 @@ function Mathemania() {
         body: JSON.stringify(formData)
       });
 
-      // Try to parse JSON response from Apps Script
       let data;
       try {
         data = await res.json();
@@ -71,7 +70,6 @@ function Mathemania() {
 
       alert("Registration submitted! Your response has been recorded.");
 
-      // Reset form
       setFormData({
         teamName: "",
         institute: "",
@@ -147,6 +145,24 @@ function Mathemania() {
               </div>
             </div>
 
+            {/* ⭐ NEW LINE ADDED BELOW */}
+            <p className="mathemania-text" style={{ marginTop: "10px" }}>
+              <a
+                href="https://drive.google.com/drive/folders/1QXsp1OCryBgIKEJScEwKYkb8kdNkmaR6?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#7b4bff",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                  fontWeight: "600"
+                }}
+              >
+                Click here for PYQs →
+              </a>
+            </p>
+            {/* ⭐ END OF NEW ADDITION */}
+
             <p className="mathemania-text mathemania-past-line">
               Past papers and resources will be made available on the Stamatics
               website ahead of the contest.
@@ -186,7 +202,7 @@ function Mathemania() {
                 />
               </div>
 
-              {/* INSTITUTE (required) */}
+              {/* INSTITUTE */}
               <div className="mathemania-field">
                 <label htmlFor="institute">
                   Institute<span className="required-star">*</span>
@@ -202,7 +218,7 @@ function Mathemania() {
                 />
               </div>
 
-              {/* TEAM LEADER (required) */}
+              {/* TEAM LEADER */}
               <div className="mathemania-field">
                 <label htmlFor="teamLeader">
                   Team Leader<span className="required-star">*</span>
@@ -218,7 +234,7 @@ function Mathemania() {
                 />
               </div>
 
-              {/* EMAIL (required) */}
+              {/* EMAIL */}
               <div className="mathemania-field">
                 <label htmlFor="leaderEmail">
                   Email<span className="required-star">*</span>
@@ -234,7 +250,7 @@ function Mathemania() {
                 />
               </div>
 
-              {/* CONTACT NUMBER (required) */}
+              {/* CONTACT NUMBER */}
               <div className="mathemania-field">
                 <label htmlFor="contactNumber">
                   Contact Number<span className="required-star">*</span>
@@ -250,7 +266,7 @@ function Mathemania() {
                 />
               </div>
 
-              {/* TEAM MEMBER 2 */}
+              {/* MEMBER 2 */}
               <div className="mathemania-field-group">
                 <div className="mathemania-field">
                   <label htmlFor="member2">Team Member 2</label>
@@ -276,7 +292,7 @@ function Mathemania() {
                 </div>
               </div>
 
-              {/* TEAM MEMBER 3 */}
+              {/* MEMBER 3 */}
               <div className="mathemania-field-group">
                 <div className="mathemania-field">
                   <label htmlFor="member3">Team Member 3</label>
@@ -302,7 +318,7 @@ function Mathemania() {
                 </div>
               </div>
 
-              {/* TEAM MEMBER 4 */}
+              {/* MEMBER 4 */}
               <div className="mathemania-field-group">
                 <div className="mathemania-field">
                   <label htmlFor="member4">Team Member 4</label>
