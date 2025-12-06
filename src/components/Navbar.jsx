@@ -35,9 +35,6 @@ function Navbar() {
               <a href="/#integration" className="dropdown-item">
                 Integration Bee
               </a>
-              <a href="/#mathematica" className="dropdown-item">
-                Mathematica
-              </a>
 
               {/* Mathemania has its own page */}
               <NavLink to="/mathemania" className="dropdown-item">
@@ -50,17 +47,17 @@ function Navbar() {
             </div>
           </div>
 
-          {/* BLOGS (real page) */}
+          {/* BLOGS */}
           <NavLink to="/blogs" className={navLinkClass}>
             Blogs
           </NavLink>
 
-          {/* OUR TEAM (placeholder for future page) */}
+          {/* OUR TEAM */}
           <NavLink to="/team" className={navLinkClass}>
             Our Team
           </NavLink>
 
-          {/* CONTACT PAGE */}
+          {/* CONTACT */}
           <NavLink to="/contact" className={navLinkClass}>
             Contact
           </NavLink>
