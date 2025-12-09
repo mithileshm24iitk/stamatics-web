@@ -39,7 +39,6 @@ function Mathemania() {
     }
 
     // Enforce teammate order:
-    // If member 3 is filled, member 2 must be filled.
     const hasMember2 =
       formData.member2Name.trim() !== "" || formData.member2Email.trim() !== "";
     const hasMember3 =
@@ -113,72 +112,69 @@ function Mathemania() {
           </p>
         </header>
 
-        {/* OVERVIEW GRID */}
-        <div className="mathemania-grid">
-          {/* LEFT PANEL */}
-          <div className="mathemania-card">
-            <h2 className="mathemania-card-title">Event Overview</h2>
-            <p className="mathemania-text">
-              Mathemania is an engaging team-based mathematics competition
-              designed to challenge participants through a curated set of eight
-              high-level problems drawn from diverse areas of mathematics. The
-              event encourages collaborative problem-solving, strategic
-              thinking, and rigorous reasoning under time constraints. Each team
-              works together to complete the full question set, applying logic,
-              geometry, algebra, number theory, and inequality techniques to
-              arrive at correct solutions.
-            </p>
+        {/* OVERVIEW – FULL WIDTH, NO BOX */}
+        <div className="mathemania-overview">
+          <h2 className="mathemania-card-title">Event Overview</h2>
+          <p className="mathemania-text">
+            Mathemania is an engaging team-based mathematics competition
+            designed to challenge participants through a curated set of eight
+            high-level problems drawn from diverse areas of mathematics. The
+            event encourages collaborative problem-solving, strategic thinking,
+            and rigorous reasoning under time constraints. Each team works
+            together to complete the full question set, applying logic,
+            geometry, algebra, number theory, and inequality techniques to
+            arrive at correct solutions.
+          </p>
 
-            <h2 className="mathemania-card-title mathemania-subheading">
-              Key Information
-            </h2>
+          <h2 className="mathemania-card-title mathemania-subheading">
+            Key Information
+          </h2>
 
-            <p className="mathemania-keyinfo">Format:</p>
-            <ul>
-              <li>The paper contains 8–10 questions, each worth 10 points.</li>
-              <li>
-                Each question is subjective and explores areas such as proofs,
-                logical reasoning, and geometry.
-              </li>
-            </ul>
+          <p className="mathemania-keyinfo">Format:</p>
+          <ul>
+            <li>The paper contains 8–10 questions, each worth 10 points.</li>
+            <li>
+              Each question is subjective and explores areas such as proofs,
+              logical reasoning, and geometry.
+            </li>
+          </ul>
 
-            <p className="mathemania-keyinfo">Rules and Conduct:</p>
-            <ul>
-              <li>
-                Interaction between teams is strictly prohibited and may lead to
-                penalties or disqualification.
-              </li>
-              <li>
-                All electronic devices must be submitted to an invigilator
-                before the event begins. Any use of such devices during the
-                competition results in immediate disqualification.
-              </li>
-            </ul>
+          <p className="mathemania-keyinfo">Rules and Conduct:</p>
+          <ul>
+            <li>
+              Interaction between teams is strictly prohibited and may lead to
+              penalties or disqualification.
+            </li>
+            <li>
+              All electronic devices must be submitted to an invigilator before
+              the event begins. Any use of such devices during the competition
+              results in immediate disqualification.
+            </li>
+          </ul>
 
-            <p className="mathemania-text" style={{ marginTop: "10px" }}>
-              <a
-                href="https://drive.google.com/drive/folders/1QXsp1OCryBgIKEJScEwKYkb8kdNkmaR6?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: "#7b4bff",
-                  textDecoration: "underline",
-                  cursor: "pointer",
-                  fontWeight: "600"
-                }}
-              >
-                Click here for PYQs →
-              </a>
-            </p>
+          <p className="mathemania-text" style={{ marginTop: "10px" }}>
+            <a
+              href="https://drive.google.com/drive/folders/1QXsp1OCryBgIKEJScEwKYkb8kdNkmaR6?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "#7b4bff",
+                textDecoration: "underline",
+                cursor: "pointer",
+                fontWeight: "600"
+              }}
+            >
+              Click here for PYQs →
+            </a>
+          </p>
 
-            <p className="mathemania-text mathemania-past-line">
-              Past papers and resources will be made available on the Stamatics
-              website ahead of the contest.
-            </p>
-          </div>
+          <p className="mathemania-text mathemania-past-line">
+            Past papers and resources will be made available on the Stamatics
+            website ahead of the contest.
+          </p>
         </div>
 
-        {/* REGISTRATION FORM MOVED TO END OF PAGE */}
+        {/* REGISTRATION FORM – STILL IN A BOX AT THE END */}
         <div className="mathemania-card">
           <h2 className="mathemania-card-title">
             Mathemania Registration Form
