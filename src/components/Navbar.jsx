@@ -1,6 +1,8 @@
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png"; 
 
+import "../styles/components/navbar.css"; // ← ONLY ADDITION
+
 const navLinkClass = ({ isActive }) =>
   "nav-link " + (isActive ? "nav-link-active" : "");
 
