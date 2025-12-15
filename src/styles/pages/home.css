@@ -51,28 +51,10 @@
 .hero-subtitle {
   font-size: 18px;
   color: var(--text-muted);
-  margin-bottom: 36px;
+  margin-bottom: 24px;
 }
 
-.hero-button {
-  padding: 12px 36px;
-  border-radius: 4px;
-  background: transparent;
-  color: #fff;
-  border: 1px solid var(--border-muted);
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.hero-button:hover {
-  background: #fff;
-  color: #000;
-  transform: translateY(-1px);
-}
-
-/* HERO RIGHT */
+/* HERO RIGHT (unused now, kept intact) */
 
 .hero-right {
   display: flex;
@@ -152,21 +134,21 @@
   color: #ffffff;
 }
 
-/* ABOUT SECTION */
+/* ABOUT SECTION (MODIFIED FOR HERO EMBED) */
 
 .about-section {
-  padding: 80px 32px 100px;
-  background: rgba(0, 0, 0, 0.95);
-  min-height: 100vh;
+  padding: 24px 0 0;
+  background: transparent;
+  min-height: auto;
 }
 
 .about-inner {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .about-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: 14px;
 }
