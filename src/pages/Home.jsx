@@ -15,7 +15,6 @@ function Home() {
       <main className="hero-content">
         {/* LEFT COLUMN */}
         <section className="hero-left">
-          {/* CENTERED TITLE BLOCK */}
           <div className="hero-center">
             <h1 className="hero-title">
               <span>Stamatics</span>
