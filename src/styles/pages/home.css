@@ -80,6 +80,36 @@
   color: #ffffff;
 }
 
+/* ABOUT US FULL-WIDTH SECTION */
+
+.about-full {
+  width: 100%;
+  padding: 64px 32px;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.about-full-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 14px;
+  padding: 28px 32px;
+}
+
+.about-full-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.about-full-text {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
@@ -91,5 +121,13 @@
   .hero-left {
     padding-top: 18vh;
     min-height: auto;
+  }
+
+  .about-full {
+    padding: 48px 20px;
+  }
+
+  .about-full-inner {
+    padding: 22px 20px;
   }
 }
