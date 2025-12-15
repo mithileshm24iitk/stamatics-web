@@ -1,42 +1,95 @@
-// src/pages/Home.jsx
+/* HERO SECTION */
 
-import { Link } from "react-router-dom";
-import "../styles/pages/home.css";
-import bgImage from "../assets/home_background.jpg";
-
-function Home() {
-  return (
-    <div
-      className="hero-root"
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
-      <div className="hero-overlay" />
-
-      <main className="hero-content">
-        {/* LEFT COLUMN */}
-        <section className="hero-left">
-          <div className="hero-center">
-            <h1 className="hero-title">
-              <span>Stamatics</span>
-              <br />
-              <span>IIT Kanpur</span>
-            </h1>
-
-            <p className="hero-subtitle">
-              Bring problems. Leave with answers.
-            </p>
-          </div>
-        </section>
-
-        {/* RIGHT COLUMN (EMPTY FOR BALANCE) */}
-        <section className="hero-right" />
-      </main>
-
-      <div className="scroll-indicator">
-        <span className="scroll-arrow">↓</span>
-      </div>
-    </div>
-  );
+.hero-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
-export default Home;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 20% 0,
+      rgba(123, 75, 255, 0.25),
+      transparent 55%
+    ),
+    rgba(0, 0, 0, 0.75);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1.4fr 1.6fr;
+  gap: 120px;
+}
+
+/* LEFT COLUMN */
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 22vh; /* ← CHANGE THIS TO MOVE TEXT UP/DOWN */
+  min-height: 100vh;
+}
+
+.hero-center {
+  max-width: 640px;
+}
+
+.hero-title {
+  font-size: clamp(38px, 4vw + 10px, 60px);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+/* RIGHT COLUMN */
+
+.hero-right {
+  display: block;
+}
+
+/* SCROLL ARROW */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-arrow {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-left {
+    padding-top: 18vh;
+    min-height: auto;
+  }
+}
