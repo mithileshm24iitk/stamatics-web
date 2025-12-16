@@ -79,7 +79,7 @@
 .about-full {
   width: 100%;
   padding: 0 32px 64px;
-  margin-top: -300px;        /* pulls About over hero */
+  margin-top: -340px;        /* pulls About over hero */
   background: transparent;
   position: relative;
   z-index: 2;                /* above hero overlay */
