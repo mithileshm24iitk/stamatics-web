@@ -42,7 +42,7 @@ function Contact() {
           {/* LEFT COLUMN */}
           <div className="contact-left">
             <h1 className="contact-title">Get in Touch</h1>
-            <p className="contact-tagline">I'd like to hear from you!</p>
+            <p className="contact-tagline">We'd like to hear from you!</p>
 
             <p className="contact-text">
               If you have any inquiries or just want to say hi,
