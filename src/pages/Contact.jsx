@@ -45,8 +45,8 @@ function Contact() {
             <p className="contact-tagline">We'd like to hear from you!</p>
 
             <p className="contact-text">
-              If you have any inquiries or just want to say hi,
-              please use the contact form!
+              If you have any inquiries or just want to say hi, please use the
+              contact form!
             </p>
 
             <div className="contact-footer">
@@ -96,26 +96,25 @@ function Contact() {
           <div className="contact-right">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="contact-field">
-                  <label>Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                
-                <div className="contact-field">
-                  <label>Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
+                <label>Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="contact-field">
+                <label>Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
               </div>
 
               <div className="contact-field">
