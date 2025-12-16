@@ -1,39 +1,29 @@
 import React, { useState } from "react";
-import { GOOGLE_SCRIPT_URL } from "../config"; // Ensure this file exists as discussed before
-
-import "../styles/pages/contact.css"; // ← ONLY ADDITION
+import { GOOGLE_SCRIPT_URL } from "../config";
+import "../styles/pages/contact.css";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-  
-  const [status, setStatus] = useState(""); 
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     setStatus("Sending...");
 
     try {
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        mode: "no-cors", // This is important for Google Apps Script
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8",
-        },
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(formData),
       });
 
-      // Since mode is no-cors, we assume success if no network error occurred
       setStatus("Message Sent! We will get back to you soon.");
-      setFormData({ name: "", email: "", message: "" }); // Clear form
-
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("Error:", error);
       setStatus("Failed to send. Please try again.");
@@ -41,111 +31,168 @@ function Contact() {
   };
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.header}>Contact Us</h1>
-      <p style={styles.subHeader}>Have a question? Drop us a message!</p>
+    <section className="contact-page">
+      <div className="contact-inner">
+        <div className="contact-header">
+          <h1 className="contact-title">Contact Us</h1>
+          <p className="contact-subtitle">Have a question? Drop us a message!</p>
+        </div>
 
-      <div style={styles.formCard}>
-        <form onSubmit={handleSubmit} style={styles.form}>
-          <div style={styles.inputGroup}>
-            <label style={styles.label}>Name</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              style={styles.input}
-              placeholder="Your Name"
-            />
+        <div className="contact-grid">
+          {/* LEFT: FORM */}
+          <div className="contact-card">
+            <h2 className="contact-card-title">Send us a message</h2>
+
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="contact-field">
+                <label>Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Name"
+                />
+              </div>
+
+              <div className="contact-field">
+                <label>Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div className="contact-field">
+                <label>Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  placeholder="How can we help?"
+                />
+              </div>
+
+              <button type="submit" className="contact-submit">
+                Send Message
+              </button>
+
+              {status && (
+                <p
+                  className={`contact-status ${
+                    status.includes("Failed") ? "is-error" : "is-success"
+                  }`}
+                >
+                  {status}
+                </p>
+              )}
+            </form>
           </div>
 
-          <div style={styles.inputGroup}>
-            <label style={styles.label}>Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              style={styles.input}
-              placeholder="your@email.com"
-            />
+          {/* RIGHT: SOCIALS */}
+          <div className="contact-card">
+            <h2 className="contact-card-title">Connect with us</h2>
+
+            <div className="contact-socials">
+              <a
+                className="contact-social-link"
+                href="https://www.instagram.com/stamatics_iitk/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="contact-social-icon" aria-hidden="true">
+                  {/* Instagram */}
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Z"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                    />
+                    <path
+                      d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                    />
+                    <path
+                      d="M17.5 6.6h.01"
+                      stroke="currentColor"
+                      strokeWidth="2.6"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+                <div className="contact-social-text">
+                  <div className="contact-social-name">Instagram</div>
+                  <div className="contact-social-hint">@stamatics_iitk</div>
+                </div>
+              </a>
+
+              <a
+                className="contact-social-link"
+                href="https://www.youtube.com/@stamaticsiitkanpur5236"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="contact-social-icon" aria-hidden="true">
+                  {/* YouTube */}
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.2 31.2 0 0 0 2 12s.1 3.2.4 4.8a3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1c.3-1.6.4-4.8.4-4.8s-.1-3.2-.4-4.8Z"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                    />
+                    <path
+                      d="M10.5 9.5 15.5 12l-5 2.5V9.5Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                <div className="contact-social-text">
+                  <div className="contact-social-name">YouTube</div>
+                  <div className="contact-social-hint">Stamatics IIT Kanpur</div>
+                </div>
+              </a>
+
+              <a
+                className="contact-social-link"
+                href="https://www.linkedin.com/company/stamatics-iit-kanpur/?originalSubdomain=in"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="contact-social-icon" aria-hidden="true">
+                  {/* LinkedIn */}
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M4.5 9.5V20M4.5 6.5h.01M8.5 20v-6.1c0-1.8 1.2-3.2 3-3.2s3 1.4 3 3.2V20M8.5 9.5V20M19.5 20v-6.4c0-2.7-1.4-4.4-3.6-4.4-1.5 0-2.6.8-3 1.6"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+                <div className="contact-social-text">
+                  <div className="contact-social-name">LinkedIn</div>
+                  <div className="contact-social-hint">Stamatics IIT Kanpur</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="contact-note">
+              We usually reply within 24–48 hours.
+            </div>
           </div>
-
-          <div style={styles.inputGroup}>
-            <label style={styles.label}>Message</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              style={{ ...styles.input, height: "120px" }}
-              placeholder="How can we help?"
-            />
-          </div>
-
-          <button type="submit" style={styles.button}>
-            Send Message
-          </button>
-
-          {/* Status Message */}
-          {status && (
-            <p style={status.includes("Failed") ? styles.errorMsg : styles.successMsg}>
-              {status}
-            </p>
-          )}
-        </form>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
-
-// Consistent Dark Theme Styles
-const styles = {
-  container: {
-    padding: "120px 20px 80px",
-    maxWidth: "600px",
-    margin: "0 auto",
-    color: "white",
-    textAlign: "center",
-    minHeight: "100vh",
-  },
-  header: { fontSize: "3rem", marginBottom: "10px", fontWeight: "bold" },
-  subHeader: { color: "#aaa", marginBottom: "40px", fontSize: "1.1rem" },
-  formCard: {
-    backgroundColor: "#111",
-    padding: "30px",
-    borderRadius: "15px",
-    border: "1px solid #333",
-  },
-  form: { display: "flex", flexDirection: "column", gap: "20px" },
-  inputGroup: { textAlign: "left" },
-  label: { display: "block", marginBottom: "8px", color: "#ccc", fontSize: "0.9rem" },
-  input: {
-    width: "100%",
-    padding: "12px",
-    backgroundColor: "#222",
-    border: "1px solid #444",
-    borderRadius: "8px",
-    color: "white",
-    fontSize: "1rem",
-    outline: "none",
-  },
-  button: {
-    padding: "14px",
-    backgroundColor: "#7b4bff", // Stamatics Purple
-    color: "white",
-    border: "none",
-    borderRadius: "8px",
-    fontSize: "1.1rem",
-    cursor: "pointer",
-    fontWeight: "bold",
-    marginTop: "10px",
-    transition: "background 0.3s",
-  },
-  successMsg: { marginTop: "15px", color: "#4caf50", fontWeight: "bold" },
-  errorMsg: { marginTop: "15px", color: "#ff4b4b", fontWeight: "bold" },
-};
 
 export default Contact;
