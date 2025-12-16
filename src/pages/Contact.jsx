@@ -41,11 +41,14 @@ function Contact() {
         <div className="contact-panel">
           {/* LEFT SIDE */}
           <div className="contact-left">
-            <h1 className="contact-title">Get in Touch</h1>
-            <p className="contact-subtitle">
-              We’d like to hear from you! If you have any inquiries or just want
-              to say hi, please use the contact form.
-            </p>
+            <div className="contact-left-top">
+              <p className="contact-kicker">Stamatics • IIT Kanpur</p>
+              <h1 className="contact-title">Get in Touch</h1>
+              <p className="contact-subtitle">
+                Want to collaborate, invite us for a talk, or just say hello?
+                Send a message and we’ll get back to you.
+              </p>
+            </div>
 
             <div className="contact-left-footer">
               <div className="contact-email-row">
@@ -135,10 +138,6 @@ function Contact() {
                   </svg>
                 </a>
               </div>
-
-              <div className="contact-note">
-                We usually reply within <b>24–48 hours</b>.
-              </div>
             </div>
           </div>
 
@@ -176,7 +175,7 @@ function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={6}
+                  rows={7}
                   placeholder="How can we help?"
                 />
               </div>
