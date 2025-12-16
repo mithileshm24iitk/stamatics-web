@@ -1,5 +1,4 @@
 // src/pages/Home.jsx
-
 import "../styles/pages/home.css";
 import bgImage from "../assets/home_background.jpg";
 
@@ -7,10 +6,7 @@ function Home() {
   return (
     <>
       {/* HERO SECTION */}
-      <div
-        className="hero-root"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      >
+      <div className="hero-root" style={{ backgroundImage: `url(${bgImage})` }}>
         <div className="hero-overlay" />
 
         <main className="hero-content">
@@ -30,13 +26,9 @@ function Home() {
 
           <section className="hero-right" />
         </main>
-
-        <div className="scroll-indicator">
-          <span className="scroll-arrow">↓</span>
-        </div>
       </div>
 
-      {/* ABOUT US SECTION (FULL WIDTH BELOW HERO) */}
+      {/* ABOUT US SECTION (OUTSIDE HERO, BUT VISUALLY OVERLAPS IT) */}
       <section className="about-full">
         <div className="about-full-inner">
           <h2 className="about-full-title">About Us</h2>
